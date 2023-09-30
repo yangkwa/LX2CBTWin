@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\bin",
+    "\\bin\\Debug"
   ],
+  "SelectedNode": "\\MainWindow.xaml",
   "PreviewInSolutionExplorer": false
 }

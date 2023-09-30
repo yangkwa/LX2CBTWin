@@ -44,6 +44,16 @@
       "frameworks": {
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
+          "dependencies": {
+            "FontAwesome6.Svg": {
+              "target": "Package",
+              "version": "[2.5.1, )"
+            },
+            "Microsoft.Web.WebView2": {
+              "target": "Package",
+              "version": "[1.0.2045.28, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

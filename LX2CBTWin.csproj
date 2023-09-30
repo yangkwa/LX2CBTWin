@@ -5,6 +5,33 @@
     <TargetFramework>net7.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Resources\lx2cbt.ico</ApplicationIcon>
+    <PackageIcon>lx2cbt.ico</PackageIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\logo_lx2.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\lx2cbt.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FontAwesome6.Svg" Version="2.5.1" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2045.28" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\logo_lx2.png" />
+    <Resource Include="Resources\lx2cbt.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\lx2cbt.ico">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
