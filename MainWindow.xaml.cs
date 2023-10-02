@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Configuration;
+using Microsoft.Web.WebView2.Core;
 
 namespace LX2CBTWin
 {
@@ -31,7 +32,11 @@ namespace LX2CBTWin
 
         private async void webView_Loaded(object sender, RoutedEventArgs e)
         {
-            await webView.EnsureCoreWebView2Async();
+            var appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            var userDataFolder = System.IO.Path.Combine(appData, "LX2CBT");
+
+            var webView2Environment = await CoreWebView2Environment.CreateAsync(null, userDataFolder);
+            await webView.EnsureCoreWebView2Async(webView2Environment);
 
             webView.Source = new Uri("https://lx2.kr");
 
