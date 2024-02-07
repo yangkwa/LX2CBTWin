@@ -1,0 +1,7 @@
+1. [빌드]-[선택영역게시] 메뉴 선택
+2. 프로필을 FolderProfile.pubxml 로 선택 후 [게시] 버튼 클릭
+3. 대상위치 클릭하여 퍼블리싱된 파일 확인
+4. HM NIS Edit 실행
+5. ~~\LX2CBTWin\Resources 폴더 내의 lx2cbt.nsi 열기
+6. [NSIS]-[스트립트 컴파일] 선택
+7. ~~\LX2CBTWin\Resources 폴더에 Setup.exe 파일 생성 확인. 이름변경 후 배포
