@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "LX2CBT"
-!define PRODUCT_VERSION "1.0"
+!define PRODUCT_VERSION "1.2"
 !define PRODUCT_PUBLISHER "4CSoft, Inc."
 !define PRODUCT_WEB_SITE "https://lx2.kr"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\LX2CBTWin.exe"
@@ -47,6 +47,10 @@ Section -Post
   WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}" "URLInfoAbout" "${PRODUCT_WEB_SITE}"
   WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}" "Publisher" "${PRODUCT_PUBLISHER}"
 SectionEnd
+
+Function .OnInstSuccess
+  Exec "$INSTDIR\LX2CBTWin.exe"
+FunctionEnd
 
 
 Function un.onUninstSuccess

@@ -7,7 +7,9 @@
        xmlns:fa="http://schemas.fontawesome.com/icons/svg"
         xmlns:local="clr-namespace:LX2CBTWin"
         mc:Ignorable="d"
-        Title="LX2 CBT" Height="450" Width="1600" WindowState="Maximized" SizeToContent="Manual" Topmost="True" Deactivated="MainWindow_Deactivated" ResizeMode="NoResize" WindowStyle="None">
+        Title="LX2 CBT" Height="450" Width="1600" WindowState="Maximized" SizeToContent="Manual" Topmost="True" Deactivated="MainWindow_Deactivated" ResizeMode="NoResize" WindowStyle="None" KeyDown="MainWindow_KeyDown" Closing="MainWidow_Closing">
+    <Window.InputBindings>
+    </Window.InputBindings>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="48"/>
@@ -15,11 +17,11 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="120"/>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="15*"/>
             <ColumnDefinition Width="120"/>
         </Grid.ColumnDefinitions>
-
-        <DockPanel Grid.Row="0" Grid.ColumnSpan="3" Background="#1e1e20">
+        <DockPanel Grid.Row="0" Grid.ColumnSpan="4" Background="#1e1e20">
             <Image x:Name="logoImage" Width="100" Source="Resources/logo_lx2.png" HorizontalAlignment="Left" Margin="5"/>
             <Button Name="closeButton"  HorizontalAlignment="Right" Margin="8,8,15,8" Click="CloseButton_Click">
                 <Button.Content >
@@ -27,8 +29,8 @@
                 </Button.Content>
             </Button>
         </DockPanel>
-        <Label x:Name="mainTitle" Content="LX2 CBT" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalContentAlignment="Center" Margin="50,0,0,0" Foreground="#FFFFFDFD" FontSize="20" FontWeight="Bold" FontStyle="Normal" FontStretch="Normal"/>
-        <DockPanel Grid.Row="1" Grid.ColumnSpan="3">
+        <Label x:Name="mainTitle" Content="LX2 CBT" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="500,0,0,0" Foreground="#FFFFFDFD" FontSize="20" FontWeight="Bold" FontStyle="Normal" FontStretch="Normal"/>
+        <DockPanel Grid.Row="1" Grid.ColumnSpan="4">
             <wv2:WebView2 Name="webView" Loaded="webView_Loaded" />
         </DockPanel>
     </Grid>
