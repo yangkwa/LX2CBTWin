@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net7.0-windows</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Resources\lx2cbt.ico</ApplicationIcon>
@@ -19,7 +19,7 @@
 
   <ItemGroup>
     <PackageReference Include="FontAwesome6.Svg" Version="2.5.1" />
-    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2045.28" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3296.44" />
   </ItemGroup>
 
   <ItemGroup>
