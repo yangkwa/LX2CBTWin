@@ -156,6 +156,12 @@ namespace LX2CBTWin
             // 저수준 키보드 후킹 등록 (PrintScreen, Ctrl+C/V 차단)
             _hookID = SetHook(_proc);
 
+            // Foreground 감시용 타이머 설정 (비활성화 시 커서 투명화)
+            foregroundCheckTimer = new DispatcherTimer();
+            foregroundCheckTimer.Interval = TimeSpan.FromMilliseconds(100);
+            foregroundCheckTimer.Tick += ForegroundCheckTimer_Tick;
+            foregroundCheckTimer.Start();
+
             // 프로그램 종료 시 커서/후킹 복구
             this.Closed += (s, e) =>
             {
@@ -302,6 +308,19 @@ namespace LX2CBTWin
 
             webView.CoreWebView2.Settings.AreBrowserAcceleratorKeysEnabled = false;
             webView.CoreWebView2.Settings.AreDefaultContextMenusEnabled = false;
+        }
+
+        /// <summary>
+        /// ForegroundCheckTimer_Tick: 내 윈도우가 포그라운드가 아니면 커서를 사라지게 변경
+        /// </summary>
+        private void ForegroundCheckTimer_Tick(object? sender, EventArgs e)
+        {
+            var hwnd = new WindowInteropHelper(this).Handle;
+            var foreground = GetForegroundWindow();
+            if (hwnd == foreground)
+                RestoreSystemCursor();
+            else
+                SetSystemCursor(transparentCursor, OCR_NORMAL);
         }
 
         /// <summary>
